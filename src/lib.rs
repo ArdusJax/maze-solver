@@ -26,7 +26,6 @@ pub fn walk(maze: Vec<Vec<String>>, wall: String, curr: Point, end: Point) -> bo
 }
 #[cfg(test)]
 mod tests {
-    use super::*;
 
     #[test]
     fn it_works() {}
