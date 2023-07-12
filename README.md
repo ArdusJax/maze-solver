@@ -1,8 +1,12 @@
 # Maze Solver
 
-This exercise is to program a maze solver using recursion. When going watching
-the class the solution was presented in TypeScript. I wanted to see what the
-solution would be in Rust. This isn't optimized in any way, just a fun exercise.
+This was an exercise that was done in TypeScript for a Frontend Masters
+class called "The Last Algorithms Course You'll need". The course is taught
+by none other than ThePrimeagen! I love the course.
+
+I decided to implement the solution to this exercise using Rust.
+
+This isn't optimized in any way, just a fun exercise.
 
 ## Object of the Exercise
 
