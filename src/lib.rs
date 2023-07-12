@@ -4,12 +4,10 @@
 // 3. It's the end
 // 4. Has been seen already
 
-use std::str::Chars;
-
 // Represents North, East, South and West
 const DIR: [[i32; 2]; 4] = [[0, 1], [1, 0], [0, -1], [-1, 0]];
 
-#[derive(Clone)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct Point {
     pub x: i32,
     pub y: i32,
@@ -80,6 +78,8 @@ pub fn solve(maze: Vec<Vec<char>>, wall: char, start: Point, end: Point) -> Vec<
 #[cfg(test)]
 mod tests {
 
+    use crate::{solve, Point};
+
     #[test]
     fn amazing_maze() {
         let mut maze: Vec<Vec<char>> = Vec::new();
@@ -89,5 +89,25 @@ mod tests {
         maze.push("x xxxxxxxx x".chars().collect());
         maze.push("x          x".chars().collect());
         maze.push("x xxxxxxxxxx".chars().collect());
+
+        let mut expected: Vec<Point> = Vec::new();
+        expected.push(Point::new(10, 0));
+        expected.push(Point::new(10, 1));
+        expected.push(Point::new(10, 2));
+        expected.push(Point::new(10, 3));
+        expected.push(Point::new(10, 4));
+        expected.push(Point::new(9, 4));
+        expected.push(Point::new(8, 4));
+        expected.push(Point::new(7, 4));
+        expected.push(Point::new(6, 4));
+        expected.push(Point::new(5, 4));
+        expected.push(Point::new(4, 4));
+        expected.push(Point::new(3, 4));
+        expected.push(Point::new(2, 4));
+        expected.push(Point::new(1, 4));
+        expected.push(Point::new(1, 5));
+
+        let result = solve(maze, 'x', Point::new(10, 0), Point::new(1, 5));
+        assert_eq!(result, expected);
     }
 }
